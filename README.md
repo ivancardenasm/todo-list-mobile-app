@@ -18,6 +18,8 @@ npx expo start
 
 ## Opening the app on your phone/tablet
 
+First, download the Expo Go App from [Google Play](https://play.google.com/store/apps/details?id=host.exp.exponent) or [App Store](https://apps.apple.com/us/app/expo-go/id982107779).
+
 To open the app:
 
 - On your Android device, press "Scan QR Code" on the "Home" tab of the Expo Go app and scan the QR code you see in the terminal.
