@@ -12,7 +12,6 @@
     "@rneui/base": "^4.0.0-rc.6",
     "@rneui/themed": "^4.0.0-rc.6",
     "@shopify/flash-list": "1.1.0",
-    "csvtojson": "2.0.10",
     "expo": "~46.0.13",
     "expo-dev-client": "~1.2.1",
     "expo-sqlite": "~10.3.0",
