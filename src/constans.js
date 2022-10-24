@@ -1,3 +1,5 @@
+const DATABASE_NAME = 'taskItems';
+
 const ESTIMATED_ITEM_HEIGHT = 40;
 
 const TASK_STATUS = {
@@ -13,6 +15,7 @@ const CALL_STATUS = {
 };
 
 export {
+    DATABASE_NAME,
     ESTIMATED_ITEM_HEIGHT,
     TASK_STATUS,
     CALL_STATUS,

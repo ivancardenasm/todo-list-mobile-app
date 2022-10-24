@@ -7,7 +7,10 @@ const Task = ({data, onToggleTask, onDelete}) => {
                                              icon={{name: 'delete', color: 'white'}}
                                              buttonStyle={{minHeight: '100%', backgroundColor: 'red'}} />;
 
-    const _onToggle = () => onToggleTask(data._id);
+    const _onToggle = () => {
+        const newStatus = data.status === TASK_STATUS.COMPLETED ? TASK_STATUS.IN_PROGRESS : TASK_STATUS.COMPLETED;
+        onToggleTask(data._id, newStatus);
+    };
 
     const textStyle = data.status === TASK_STATUS.COMPLETED ? {textDecorationLine: 'line-through'} : null;
 

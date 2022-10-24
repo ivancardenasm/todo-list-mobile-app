@@ -4,7 +4,7 @@ A simple To Do List app build in [Expo](https://github.com/expo/expo).
 
 ## Setting up the project
 
-Download the required packages of the project by running the following command:
+Download the required [npm](https://github.com/npm/cli) packages of the project by running the following command:
 ```
 npm i
 ```
@@ -12,6 +12,10 @@ npm i
 ## Starting the development server
 
 Start the development server by running the following command:
+```
+npm run start
+```
+or
 ```
 npx expo start
 ```
@@ -31,8 +35,11 @@ If it still doesn't work, it may be due to the router configuration — this is 
 
 ### Is the app not loading on your device?
 
+Using the "Tunnel" connection type will make app reloads considerably slower than on "LAN" or "Local", so it's best to avoid tunnel when possible. 
+You may want to install a simulator/emulator to speed up development if "Tunnel" is required for accessing your machine from another device on your network.
+```
 npx expo start --tunnel
-Using the "Tunnel" connection type will make app reloads considerably slower than on "LAN" or "Local", so it's best to avoid tunnel when possible. You may want to install a simulator/emulator to speed up development if "Tunnel" is required for accessing your machine from another device on your network.
+```
 
 ### Using a simulator or emulator?
 
