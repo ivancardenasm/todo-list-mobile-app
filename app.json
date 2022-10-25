@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "todo-list-mobile-app",
-    "slug": "todo-list-mobile-app",
+    "name": "simple-to-do-list-app",
+    "slug": "simple-to-do-list-app",
+    "owner": "ivancardenasm",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,16 +19,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ivancardenasm.simpletodolist"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.ivancardenasm.simpletodolist"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "62231c13-37df-4eb3-9ae0-acc66fe3fe7e"
+      }
     }
   }
 }

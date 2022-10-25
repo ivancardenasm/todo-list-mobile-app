@@ -48,6 +48,10 @@ If you are using a simulator or emulator, you may find the following Expo CLI ke
 - Pressing `ì` will open in an iOS simulator.
 - Pressing `w` will open in a web browser. Expo supports all major browsers.
 
+## Creating a build
+
+You can check this [documentation](https://docs.expo.dev/build/setup/) to creating a build for android or ios using Expo and EAS Build.
+
 
 
 
