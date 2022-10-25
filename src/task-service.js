@@ -1,5 +1,8 @@
 import * as SQLite from "expo-sqlite";
 import {DATABASE_NAME} from "./constans";
+import { logger } from "react-native-logs";
+
+const log = logger.createLogger();
 
 const TaskService = class {
 
@@ -12,28 +15,26 @@ const TaskService = class {
         });
     };
 
+    defaultErrorCallback = (_transactionObj, error) => log.error(error);
+
     fetchData = (callback) => this.db.transaction(transaction => {
         transaction.executeSql(`SELECT * FROM ${DATABASE_NAME}`, null,
-            (transactionObj, {rows: {_array}}) => callback(_array),
-            (transactionObj, error) => console.log('Error ', error)
-        )
+            (transactionObj, {rows: {_array}}) => callback(_array), this.defaultErrorCallback)
     });
 
     create = (name, status, callback) => this.db.transaction(transaction => {
         transaction.executeSql(`INSERT INTO ${DATABASE_NAME} (name, status) values (?, ?)`, [name, status],
-            callback,
-            (transactionObj, error) => console.log('Error', error))
+            callback, this.defaultErrorCallback)
     });
 
     updateStatus = (_id, newStatus, callback) => this.db.transaction(transaction => {
         transaction.executeSql(`UPDATE ${DATABASE_NAME} SET status = ? WHERE _id = ?`, [newStatus, _id],
-            callback,
-            (transactionObj, error) => console.log('ERROR: ', error))
+            callback, this.defaultErrorCallback)
     });
 
     delete = (_id, callback) => this.db.transaction(transaction => {
         transaction.executeSql(`DELETE FROM ${DATABASE_NAME} WHERE _id = ? `, [_id],
-            callback)
+            callback, this.defaultErrorCallback)
     });
 };
 
