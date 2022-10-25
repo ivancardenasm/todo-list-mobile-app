@@ -4,18 +4,15 @@ import TaskService from "./task-service";
 
 const TaskServiceInstance = new TaskService();
 
-const useTaskList = ({toggleBool}) => {
+const useTaskList = () => {
     const [tasks, setTasks] = useState({data: [], count: 0, status: CALL_STATUS.IDLE});
 
     const getData = async () => {
-        const callback = (data) => {
-            setTasks({
-                data: data,
-                count: data.length,
-                status: CALL_STATUS.RESOLVED,
-            });
-            toggleBool && toggleBool();
-        }
+        const callback = (data) => setTasks({
+            data: data,
+            count: data.length,
+            status: CALL_STATUS.RESOLVED,
+        });
         TaskServiceInstance.fetchData(callback);
     };
     useMemo(getData, []);

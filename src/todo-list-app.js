@@ -1,16 +1,13 @@
-import {useState} from "react";
 import useTaskList from "./use-task-list";
 import TaskFormCreate from "./task-form-create";
 import TaskList from "./task-list";
 
 const TodoListApp = () => {
-    const [bool, setBool] = useState(false);
-    const toggleBool = () => setBool(!bool);
-    const {data, onToggleTask, onCreateTask, onDeleteTask} = useTaskList({toggleBool});
+    const {data, onToggleTask, onCreateTask, onDeleteTask} = useTaskList();
 
     return <>
         <TaskFormCreate onCreate={onCreateTask} />
-        <TaskList data={data} bool={bool} onToggleTask={onToggleTask} onDeleteTask={onDeleteTask} />
+        <TaskList data={data} onToggleTask={onToggleTask} onDeleteTask={onDeleteTask} />
     </>;
 };
 
